@@ -1,10 +1,10 @@
-# https://microsoft.github.io/autogen/stable/reference/python/autogen_agentchat.agents.html#autogen_agentchat.agents.CodeExecutorAgent
+# https://microsoft.github.io/autogen/stable/reference/python/autogen_agentchat.agents.html#autogen_agentchat.agents.CodeExecutorAgent to run the code inside the docker
 
-from autogen_agentchat.agents import CodeExecutorAgent
+from autogen_agentchat.agents import CodeExecutorAgent ## to run the code inside the docker conatainer
 import asyncio
 from autogen_agentchat.messages import TextMessage
 from autogen_core import CancellationToken
-from autogen_ext.code_executors.docker import DockerCommandLineCodeExecutor
+from autogen_ext.code_executors.docker import DockerCommandLineCodeExecutor ## help our code to run inside the docker
 
 
 def getCodeExecutorAgent(code_executor):
@@ -31,7 +31,7 @@ async def main():
         content=''' Here is the Python Code which You have to run.
 ```python
 print('Hello Wooooooooorld')````        
-''',
+    ''',
     source='User'
     )
 
@@ -39,7 +39,7 @@ print('Hello Wooooooooorld')````
     try:
         await docker.start()
 
-        res = await code_executor_agent.on_messages(
+        res = await code_executor_agent.on_messages( ## when there is a new message 
             messages=[task],
             cancellation_token=CancellationToken()
         )

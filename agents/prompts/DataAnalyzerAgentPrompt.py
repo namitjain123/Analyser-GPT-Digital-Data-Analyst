@@ -27,7 +27,7 @@ pip install pandas numpy matplotlib
 
 6. If the code ran sucessfully , then analyse the output and continue as needed.
 
-Once we have completed all the rask , please mention 'STOP' after explaining in depth the fina; answer.
+Once we have completed all the rask , please mention 'STOP' after explaining in depth the final answer.
 
 Stick to these and ensure a smooth collaboration with Code_executor_agent.
 """
