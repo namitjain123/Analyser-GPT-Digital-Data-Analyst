@@ -54,23 +54,34 @@ Analyser-GPT is a agentic AI application designed to automate and streamline dat
 ## Project Structure
 
 ```
-main.py                #  Optional CLI entry point ( used for initial development and testing)
-streamlit_app.py       # Web UI entry point
-agents/
-    Code_executorAgent.py      # Docker-based code executor agent
-    Data_analyzer_agent.py     # LLM-powered data analysis agent
-    prompts/
-        data_analyzer_message.py # System prompt for analysis agent
-config/
-    constants.py               # Global constants (model, timeout, etc.)
-    docker_util.py             # Docker orchestration utilities
-models/
-    openai_model_client.py     # OpenAI API integration
-teams/
-    analyzer_gpt.py            # Team orchestration logic
-temp/, tmp/                  # Working directories for data/code
-test/                        # Unit tests
-requirements.txt, pyproject.toml # Dependencies and build config
+.
+├── main.py                  # Optional CLI entry point (initial dev/testing)
+├── streamlit_app.py         # Web UI entry point (Streamlit)
+
+├── agents/
+│   ├── Code_executorAgent.py       # Docker-based code execution agent
+│   ├── Data_analyzer_agent.py      # LLM-powered data analysis agent
+│   └── prompts/
+│       └── data_analyzer_message.py  # System prompt for analysis agent
+
+├── config/
+│   ├── constants.py          # Global constants (model, timeout, etc.)
+│   └── docker_util.py        # Docker orchestration utilities
+
+├── models/
+│   └── openai_model_client.py   # OpenAI API integration
+
+├── teams/
+│   └── analyzer_gpt.py       # Multi-agent orchestration logic
+
+├── temp/                     # Temporary working directory
+├── tmp/                      # Temporary files (runtime)
+
+├── test/                     # Unit tests
+
+├── requirements.txt          # Dependencies
+├── pyproject.toml            # Modern build config
+└── README.md
 ```
 
 ---
